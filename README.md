@@ -1,4 +1,4 @@
-# Perfect World Core
+<image src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"/> <image src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/> <image src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
 
 [![Version](https://img.shields.io/badge/Version-v1.0-success)]()
 [![Version](https://img.shields.io/badge/Java_JRE-6u45-blue)]()
@@ -7,32 +7,85 @@
 
 Docker
 
-`docker run -it --name perfect_world debian:11.5`
+```
+docker run -it --name core_pw debian:11.5
+```
 
 ---
 
+## Debian
+
 Suporte a 32-bits
 
-`dpkg --add-architecture i386`
-
-`apt update`
+```
+dpkg --add-architecture i386
+```
+```
+apt update
+```
 
 Instalando recursos
 
-`apt install vim nano openjdk-11-jre zip wget iputils-ping procps gcc-multilib lib32z1 libxml2:i386 libstdc++6:i386`
+```
+apt install vim nano openjdk-11-jre zip wget iputils-ping procps gcc-multilib lib32z1 libxml2:i386 libstdc++6:i386
+```
 
 Configurando Java JRE
 
-`chmod +x jre-6u45-linux-x64.bin`
+```
+chmod +x jre-6u45-linux-x64.bin
+```
+```
+./jre-6u45-linux-x64.bin
+```
+```
+rm jre-6u45-linux-x64.bin
+```
+```
+update-alternatives --install "/usr/bin/java" "java" "/jre1.6.0_45/bin/java" 9999
+```
 
-`./jre-6u45-linux-x64.bin`
+Adicionando bibliotecas
 
-`rm jre-6u45-linux-x64.bin`
+```
+cp -r etc /
+```
+```
+cp lib/* /lib
+```
 
-`update-alternatives --install "/usr/bin/java" "java" "/jre1.6.0_45/bin/java" 9999`
+Adicionando arquivos
 
-Em pwed execute a instalação
+```
+cp -r pwserver /
+```
+```
+chmod -R 0775 /pwserver
+```
 
-`chmod +x install.sh`
+Preparando comandos
 
-`./install.sh`
+```
+echo '#!/bin/sh\n\n./pwserver/start' > /usr/local/bin/startpw
+```
+```
+echo '#!/bin/sh\n\n./pwserver/stop' > /usr/local/bin/stoppw
+```
+```
+chmod +x /usr/local/bin/startpw
+```
+```
+chmod +x /usr/local/bin/stoppw
+```
+
+## Comandos
+
+Inicia os serviços
+```
+startpw
+```
+
+Desliga os serviços
+```
+stoppw
+```
