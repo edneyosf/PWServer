@@ -1,0 +1,70 @@
+#!/bin/sh
+
+PW_PATH=/pwserver
+VERSION=1.0
+
+RED="\e[31m"
+BLUE="\e[34m"
+YELLOW="\e[33m"
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+
+if [ ! -d $PW_PATH/logs ]; then
+mkdir $PW_PATH/logs
+fi
+
+echo ""
+echo "${RED}Start Perfect World ${VERSION}${ENDCOLOR}"
+sleep 1
+
+echo ""                                                                                    
+echo "${YELLOW}Iniciando Logservice...${ENDCOLOR}"
+cd $PW_PATH/logservice; ./logservice logservice.conf >$PW_PATH/logs/logservice.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Uniquenamed...${ENDCOLOR}"
+cd $PW_PATH/uniquenamed; ./uniquenamed gamesys.conf >$PW_PATH/logs/uniquenamed.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Authd...${ENDCOLOR}"
+cd $PW_PATH/authd/; ./authd &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Gamedbd...${ENDCOLOR}"
+cd $PW_PATH/gamedbd; ./gamedbd gamesys.conf >$PW_PATH/logs/gamedbd.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Gacd...${ENDCOLOR}"
+cd $PW_PATH/gacd; ./gacd gamesys.conf >$PW_PATH/logs/gacd.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Gfactiond...${ENDCOLOR}"
+cd $PW_PATH/gfactiond; ./gfactiond gamesys.conf >$PW_PATH/logs/gfactiond.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Gdeliveryd...${ENDCOLOR}"
+cd $PW_PATH/gdeliveryd; ./gdeliveryd gamesys.conf >$PW_PATH/logs/gdeliveryd.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Glinkd...${ENDCOLOR}"
+cd $PW_PATH/glinkd; ./glinkd gamesys.conf 1 >$PW_PATH/logs/glink1.log &
+cd $PW_PATH/glinkd; ./glinkd gamesys.conf 2 >$PW_PATH/logs/glink2.log &
+cd $PW_PATH/glinkd; ./glinkd gamesys.conf 3 >$PW_PATH/logs/glink3.log &
+cd $PW_PATH/glinkd; ./glinkd gamesys.conf 4 >$PW_PATH/logs/glink4.log &
+sleep 2
+
+echo ""
+echo "${YELLOW}Iniciando Mundo...${ENDCOLOR}"
+cd $PW_PATH/gamed; ./gs gs01 >$PW_PATH/logs/game1.log &
+sleep 2
+
+echo ""
+echo "${GREEN}Online!${ENDCOLOR}"
+echo ""

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="rpcalls.xsl"?>
+<application namespace="GNET">
+	<operation description="ÇÐ»»Íæ¼ÒÃû×ÖÓëID" name="Toggle_NameID" type="0"/>
+	<operation description="½øÈëÒþÉí»òÎÞµÐ×´Ì¬" name="Hide_BeGod" type="1"/>
+	<operation description="ÇÐ»»ÊÇ·ñÔÚÏß" name="Online_OrNot" type="2"/>
+	<operation description="ÇÐ»»ÊÇ·ñ¿ÉÒÔÃÜÓï" name="Chat_OrNot" type="3"/>
+	<operation description="ÒÆ¶¯µ½Ö¸¶¨½ÇÉ«Éí±ß" name="MoveTo_Role" type="4"/>
+	<operation description="½«Ö¸¶¨½ÇÉ«ÕÙ»½µ½GMÉí±ß" name="Fetch_Role" type="5"/>
+	<operation description="ÒÆ¶¯µ½Ö¸¶¨Î»ÖÃ" name="Move_AsWill" type="6"/>
+	<operation description="ÒÆ¶¯µ½Ö¸¶¨NPCÎ»ÖÃ" name="MoveTo_NPC" type="7"/>
+	<operation description="ÒÆ¶¯µ½Ö¸¶¨µØÍ¼£¨¸±±¾£©" name="MoveTo_Map" type="8"/>
+	<operation description="ÒÆ¶¯¼ÓËÙ" name="Enhance_Speed" type="9"/>
+	<operation description="¸úËæÍæ¼Ò" name="Follow" type="10"/>
+	<operation description="»ñÈ¡ÔÚÏßÍæ¼ÒÁÐ±í" name="ListUser" type="11"/>
+	<!--***  level-2 ***-->
+	<operation description="Ç¿ÖÆÀëÏß" name="Force_Offline" type="100"/>
+	<operation description="½ûÑÔ" name="Forbid_Talk" type="101"/>
+	<operation description="½ûÖ¹Íæ¼Ò¼ä¡¢Íæ¼ÒÓëNPC½»Ò×" name="Forbid_Trade" type="102"/>
+	<operation description="½ûÂô" name="Forbid_Sell" type="103"/>
+	<operation description="ÏµÍ³¹ã²¥" name="Broadcast" type="104"/>
+	<operation description="¹Ø±ÕÓÎÏ··þÎñÆ÷" name="Shutdown_GameServer" type="105"/>
+	<!--*** level-3 ***-->
+	<operation description="ÕÙ»½¹ÖÎï" name="Summon_Monster" type="200"/>
+	<operation description="ÇýÉ¢±»ÕÙ»½ÎïÌå" name="Dispel_Summon" type="201"/>
+	<operation description="Î±×°" name="Pretend" type="202"/>
+	<operation description="GM¹ÜÀíÔ±" name="GMMaster" type="203"/>
+	<operation description="Ë«±¶¾­Ñé" name="DoubleExp" type="204"/>
+	<operation description="²¢·¢Á¬½ÓÊý" name="Lambda" type="205"/>
+	<operation description="»î¶¯¹ÜÀíÔ±" name="ActivityManager" type="206"/>
+	<operation description="½ûÖ¹Íæ¼Ò¼ä½»Ò×" name="NoTrade" type="207"/>
+	<operation description="½ûÖ¹ÅÄÂô²Ù×÷" name="NoAuction" type="208"/>
+	<operation description="½ûÖ¹ÓÊ¼þ²Ù×÷" name="NoMail" type="209"/>
+	<operation description="½ûÖ¹°ïÅÉ²Ù×÷" name="NoFaction" type="210"/>
+	<operation description="Ë«±¶µôÇ®" name="DoubleMoney" type="211"/>
+	<operation description="Ë«±¶µôÎï" name="DoubleObject" type="212"/>
+	<operation description="Ë«±¶¼¼ÄÜµã" name="DoubleSP" type="213"/>
+	<operation description="½ûÖ¹ÏúÊÛµã¿¨" name="NoSellPoint" type="214"/>
+
+	<!-- system department -->
+	<operation description="ÐÞ¸Ä½ÇÉ«" name="ModifyRoleInfo" type="501"/>
+	<operation description="²é¿´·þÎñÆ÷ÔËÐÐ×´Ì¬" name="ViewStatus" type="502"/>
+	<operation description="²é¿´ÈÕÖ¾" name="ViewLog" type="503"/>
+	<operation description="Ç¿ÖÆ¹Ø±ÕºÍÖØÆôÓÎÏ··þÎñÆ÷" name="ForceRestartGame" type="504"/>
+	<operation description="Ç¿ÖÆ¹Ø±ÕºÍÖØÆôÊý¾Ý¿â·þÎñÆ÷" name="ForceRestartDB" type="505"/>
+	<operation description="ID²éÑ¯" name="QueryRoleID" type="506"/>
+	<operation description="½ÇÉ«ÐÅÏ¢" name="QueryRoleInfo" type="507"/>
+	<operation description="½ÇÉ«×´Ì¬" name="QueryRoleStatus" type="508"/>
+	<operation description="ÏòÌØ¶¨½ÇÉ«ÔùËÍÎïÆ·" name="Present" type="509"/>
+
+	<operation description="·âºÅ¼ÇÂ¼" name="GetUserForbids" type="510"/>
+	<operation description="³äÖµ¼ÇÂ¼" name="GetUserCardused" type="511"/>
+	<operation description="Óà¶î²éÑ¯" name="GetUserPoints" type="512"/>
+	<operation description="ÐÞ¸ÄÓà¶î" name="UpdateUserPoint" type="513"/>
+	<operation description="ÕÊºÅÐÅÏ¢" name="GetUserInfoByName" type="514"/>
+	<operation description="ÕÊºÅÐÞ¸Ä" name="UpdateUserInfoByName" type="515"/>
+	<operation description="½â·â" name="UnkickUser" type="516"/>
+	<operation description="½ÇÉ«ÁÐ±í" name="GetRoleList" type="517"/>
+	<operation description="¸ÄÃÜÂë" name="UpdateAccountPasswd" type="518"/>
+
+	<zone aid="1" delivery="192.168.0.200" gacdport="29712" id="1" location="Brazil1" name="WanMei1" url="http://192.168.0.200/iweb/gmservice" url2=""/>
+	<zone aid="1" delivery="192.168.0.200" gacdport="29712" id="2" location="Brazil2" name="WanMei2" url="http://192.168.0.200/iweb/gmservice" url2=""/>
+	<zone aid="1" delivery="192.168.0.200" gacdport="29712" id="3" location="Brazil3" name="WanMei3" url="http://192.168.0.200/iweb/gmservice" url2=""/>
+
+</application>

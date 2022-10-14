@@ -1,0 +1,63 @@
+#!/bin/sh
+
+VERSION=1.0
+
+RED="\e[31m"
+BLUE="\e[34m"
+YELLOW="\e[33m"
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+
+echo ""
+echo "${RED}Stop Perfect World ${VERSION}${ENDCOLOR}"
+sleep 1
+
+echo ""  
+echo "${YELLOW}Desligando Mundo...${ENDCOLOR}"
+pkill -9 gs
+
+echo ""  
+echo "${YELLOW}Desligando Gamedbd...${ENDCOLOR}"
+pkill -9 gamedbd
+
+echo ""  
+echo "${YELLOW}Desligando Gdeliveryd...${ENDCOLOR}"
+pkill -9 gdeliveryd
+
+echo ""  
+echo "${YELLOW}Desligando Gfactiond...${ENDCOLOR}"
+pkill -9 gfactiond
+
+echo ""  
+echo "${YELLOW}Desligando Authd...${ENDCOLOR}"
+pkill -9 authd
+
+echo ""  
+echo "${YELLOW}Desligando Uniquenamed...${ENDCOLOR}"
+pkill -9 uniquenamed
+
+echo ""  
+echo "${YELLOW}Desligando Glinkd...${ENDCOLOR}"
+pkill -9 glinkd
+
+echo ""  
+echo "${YELLOW}Desligando Gacd...${ENDCOLOR}"
+pkill -9 gacd
+
+echo ""  
+echo "${YELLOW}Desligando Logservices...${ENDCOLOR}"
+pkill -9 logservices
+
+echo ""  
+echo "${YELLOW}Desligando Java...${ENDCOLOR}"
+pkill -9 java
+
+#echo ""  
+#echo "${YELLOW}Limpando caches...${ENDCOLOR}"
+#free && sync && echo 3 > /proc/sys/vm/drop_caches && free
+sleep 2
+
+echo ""
+echo "${RED}Offline!${ENDCOLOR}"
+echo ""
+exit 0
