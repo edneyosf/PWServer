@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.0
+VERSION=1.2
 
 RED="\e[31m"
 BLUE="\e[34m"
@@ -52,9 +52,6 @@ echo ""
 echo "${YELLOW}Desligando Java...${ENDCOLOR}"
 pkill -9 java
 
-#echo ""  
-#echo "${YELLOW}Limpando caches...${ENDCOLOR}"
-#free && sync && echo 3 > /proc/sys/vm/drop_caches && free
 sleep 2
 
 echo ""
