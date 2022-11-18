@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PW_PATH=/pwserver
-VERSION=1.0
+VERSION=1.2
 
 RED="\e[31m"
 BLUE="\e[34m"
@@ -62,7 +62,36 @@ sleep 2
 
 echo ""
 echo "${YELLOW}Iniciando Mundo...${ENDCOLOR}"
-cd $PW_PATH/gamed; ./gs gs01 >$PW_PATH/logs/game1.log &
+cd $PW_PATH/gamed; ./gs gs01 >$PW_PATH/logs/gs01.log &
+cd $PW_PATH/gamed; ./gs is02 >$PW_PATH/logs/is02.log &
+cd $PW_PATH/gamed; ./gs is05 >$PW_PATH/logs/is05.log &
+cd $PW_PATH/gamed; ./gs is06 >$PW_PATH/logs/is06.log &
+cd $PW_PATH/gamed; ./gs is07 >$PW_PATH/logs/is07.log &
+cd $PW_PATH/gamed; ./gs is08 >$PW_PATH/logs/is08.log &
+cd $PW_PATH/gamed; ./gs is09 >$PW_PATH/logs/is09.log &
+cd $PW_PATH/gamed; ./gs is10 >$PW_PATH/logs/is10.log &
+cd $PW_PATH/gamed; ./gs is11 >$PW_PATH/logs/is11.log &
+cd $PW_PATH/gamed; ./gs is12 >$PW_PATH/logs/is12.log &
+cd $PW_PATH/gamed; ./gs is13 >$PW_PATH/logs/is13.log &
+cd $PW_PATH/gamed; ./gs is14 >$PW_PATH/logs/is14.log &
+cd $PW_PATH/gamed; ./gs is15 >$PW_PATH/logs/is15.log &
+cd $PW_PATH/gamed; ./gs is16 >$PW_PATH/logs/is16.log &
+cd $PW_PATH/gamed; ./gs is17 >$PW_PATH/logs/is17.log &
+cd $PW_PATH/gamed; ./gs is18 >$PW_PATH/logs/is18.log &
+cd $PW_PATH/gamed; ./gs is19 >$PW_PATH/logs/is19.log &
+cd $PW_PATH/gamed; ./gs is20 >$PW_PATH/logs/is20.log &
+cd $PW_PATH/gamed; ./gs is21 >$PW_PATH/logs/is21.log &
+cd $PW_PATH/gamed; ./gs is22 >$PW_PATH/logs/is22.log &
+cd $PW_PATH/gamed; ./gs is23 >$PW_PATH/logs/is23.log &
+cd $PW_PATH/gamed; ./gs is24 >$PW_PATH/logs/is24.log &
+cd $PW_PATH/gamed; ./gs is25 >$PW_PATH/logs/is25.log &
+cd $PW_PATH/gamed; ./gs is26 >$PW_PATH/logs/is26.log &
+cd $PW_PATH/gamed; ./gs is27 >$PW_PATH/logs/is27.log &
+cd $PW_PATH/gamed; ./gs is28 >$PW_PATH/logs/is28.log &
+cd $PW_PATH/gamed; ./gs is29 >$PW_PATH/logs/is29.log &
+cd $PW_PATH/gamed; ./gs is31 >$PW_PATH/logs/is31.log &
+cd $PW_PATH/gamed; ./gs is32 >$PW_PATH/logs/is32.log &
+cd $PW_PATH/gamed; ./gs is33 >$PW_PATH/logs/is33.log &
 sleep 2
 
 echo ""
