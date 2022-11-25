@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="table.xsl"?>
 
 <application debug="false" >
 
 <driver name="com.mysql.jdbc.Driver" />
-<connection name="auth0" poolsize="3" url="jdbc:mysql://172.20.0.2:3306/pw?useUnicode=true&amp;characterEncoding=utf-8" username="root" password="220820"/>
+<connection name="auth0" poolsize="3" url="jdbc:mysql://172.20.0.2/pw?useUnicode=true&amp;characterEncoding=utf8" username="root" password="220820"/>
 
 <table name="users" connection="auth0" operate="replaceA"> 
 	<column name="id"           sql-type="integer"     java-type="java.lang.Integer" not-null="true" />
@@ -236,7 +236,7 @@
 	<column name="status" column="u.status"/>
 	<column name="creatime" column="u.creatime"/>
 
-	<select name="bystatus" condition="WHERE status = ?"/>
+	<select name="bystatus" condition="WHERE status = ? AND creatime &lt; date_add(now(), INTERVAL '-200' SECOND)"/>
 	<select name="byuserzone" condition="WHERE u.userid = ? AND u.zoneid = ?"/>
 	<select name="byuserzonesn" condition="WHERE u.userid = ? AND u.zoneid = ? AND u.sn = ?"/>
 	<select name="byuser" condition="WHERE u.userid = ?"/>
@@ -405,3 +405,4 @@
 </procedure>
 
 </application>
+
