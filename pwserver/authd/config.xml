@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet type="text/xsl" href="rpcalls.xsl"?>
 
 <application namespace="GNET">
@@ -73,10 +73,10 @@
                 <variable name="response" type="Octets" default="Octets(0)"/>
                 <variable name="matrix" type="Octets" default="Octets(0)"/>
         </rpcdata>
-        <rpc debug="0" name="MatrixPasswd" type="550" argument="MatrixPasswdArg" result="MatrixPasswdRes" maxsize="512" prior="1" 
+        <rpc debug="0" name="MatrixPasswd" type="550" argument="MatrixPasswdArg" result="MatrixPasswdRes" maxsize="512" prior="101" 
 timeout="30"/>
 
-        <protocol debug="0" name="MatrixFailure" maxsize="64" prior="1" type="553">
+        <protocol debug="0" name="MatrixFailure" maxsize="64" prior="101" type="553">
                 <variable name="userid" type="int" default="0"/>
                 <variable name="loginip" type="int" default="0"/>
                 <variable name="weight" type="int" default="0"/>
@@ -111,18 +111,6 @@ timeout="30"/>
 		<variable name="zoneid" type="int"/>
 		<variable name="aid" type="int" />
 		<variable name="blreset" type="byte"/>
-
-	<protocol debug="1" name="AnnounceZoneid3" maxsize="32" prior="2" type="527">
-		<variable name="zoneid" type="int"/>
-		<variable name="aid" type="int" />
-		<variable name="blreset" type="byte"/>
-		<variable name="ip1" type="int" />
-		<variable name="ip2" type="int" />
-		<variable name="ip3" type="int" />
-		<variable name="reserved1" type="int" />
-		<variable name="reserved2" type="int" />
-	</protocol>
-
 	</protocol>
 	<protocol debug="0" name="QueryUserPrivilege" type="506" maxsize="32" prior="2">
 		<variable name="userid" type="int"/>
@@ -227,7 +215,6 @@ timeout="30"/>
 		<proto name="StatusAnnounce" />
 		<proto name="AnnounceZoneid"/>
 		<proto name="AnnounceZoneid2"/>
-		<proto name="AnnounceZoneid3"/>
 		<proto name="QueryUserPrivilege"/>
 		<proto name="QueryUserPrivilege2"/>
 		<proto name="GMKickoutUser"/>
