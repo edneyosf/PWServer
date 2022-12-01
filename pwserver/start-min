@@ -1,8 +1,5 @@
 #!/bin/sh
 
-PW_PATH=/pwserver
-VERSION=1.6
-
 RED="\e[31m"
 BLUE="\e[34m"
 YELLOW="\e[33m"
@@ -14,7 +11,7 @@ mkdir $PW_PATH/logs
 fi
 
 echo ""
-echo "${RED}Start Perfect World ${VERSION}${ENDCOLOR}"
+echo "${RED}Start Perfect World ${CORE_VERSION}${ENDCOLOR}"
 sleep 1
 
 echo ""                                                                                    
@@ -55,9 +52,6 @@ sleep 2
 echo ""
 echo "${YELLOW}Iniciando Glinkd...${ENDCOLOR}"
 cd $PW_PATH/glinkd; ./glinkd gamesys.conf 1 >$PW_PATH/logs/glink1.log &
-cd $PW_PATH/glinkd; ./glinkd gamesys.conf 2 >$PW_PATH/logs/glink2.log &
-cd $PW_PATH/glinkd; ./glinkd gamesys.conf 3 >$PW_PATH/logs/glink3.log &
-cd $PW_PATH/glinkd; ./glinkd gamesys.conf 4 >$PW_PATH/logs/glink4.log &
 sleep 2
 
 echo ""

@@ -1,5 +1,8 @@
 FROM debian:11.5
 
+ENV CORE_VERSION=1.7
+ENV PW_PATH=/pwserver
+
 RUN dpkg --add-architecture i386
 RUN apt update
 RUN apt install -y vim nano openjdk-11-jre zip wget iputils-ping procps gcc-multilib lib32z1 libxml2:i386 libstdc++6:i386
