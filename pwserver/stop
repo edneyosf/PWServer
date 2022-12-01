@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.4
+VERSION=1.5
 
 RED="\e[31m"
 BLUE="\e[34m"
