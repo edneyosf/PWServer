@@ -1,6 +1,6 @@
 <image src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"/> <image src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/> <image src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
 
-[![Version](https://img.shields.io/badge/Version-v1.0-success)]()
+[![Version](https://img.shields.io/badge/Version-v1.5.1-success)]()
 [![Version](https://img.shields.io/badge/Java_JRE-6u45-blue)]()
 [![Version](https://img.shields.io/badge/Java_JDK-11-blue)]()
 [![Version](https://img.shields.io/badge/Debian-v11.5-blue)]()
@@ -67,13 +67,19 @@ chmod -R 0775 /pwserver
 Preparando comandos
 
 ```
-echo '#!/bin/sh\n\n./pwserver/start' > /usr/local/bin/startpw
+echo $'#!/bin/sh\n\n./pwserver/start' > /usr/local/bin/startpw
 ```
 ```
-echo '#!/bin/sh\n\n./pwserver/stop' > /usr/local/bin/stoppw
+echo $'#!/bin/sh\n\n./pwserver/start-min' > /usr/local/bin/startpw-min
+```
+```
+echo $'#!/bin/sh\n\n./pwserver/stop' > /usr/local/bin/stoppw
 ```
 ```
 chmod +x /usr/local/bin/startpw
+```
+```
+chmod +x /usr/local/bin/startpw-min
 ```
 ```
 chmod +x /usr/local/bin/stoppw
@@ -84,6 +90,11 @@ chmod +x /usr/local/bin/stoppw
 Inicia os serviços
 ```
 startpw
+```
+
+Inicia os serviços (apenas o mapa principal)
+```
+startpw-min
 ```
 
 Desliga os serviços
