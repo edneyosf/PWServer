@@ -22,11 +22,11 @@ COPY lib/libtask.so /lib
 COPY lib/libtask.so.2 /lib
 COPY lib/libxml2.so.2 /lib
 
-RUN echo $'#!/bin/sh\n\n/pwserver/start' > /usr/local/bin/startpw
+RUN echo $'#!/bin/sh\n\n./pwserver/start' > /usr/local/bin/startpw
 RUN chmod +x /usr/local/bin/startpw
 
-RUN echo $'#!/bin/sh\n\n/pwserver/stop' > /usr/local/bin/stoppw
+RUN echo $'#!/bin/sh\n\n./pwserver/stop' > /usr/local/bin/stoppw
 RUN chmod +x /usr/local/bin/stoppw
 
-RUN echo $'#!/bin/sh\n\n/pwserver/start-min' > /usr/local/bin/startpw-min
+RUN echo $'#!/bin/sh\n\n./pwserver/start-min' > /usr/local/bin/startpw-min
 RUN chmod +x /usr/local/bin/startpw-min
