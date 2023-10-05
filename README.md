@@ -7,7 +7,7 @@
 [![Version](https://img.shields.io/badge/Java_JDK-17-blue)]()
 [![Version](https://img.shields.io/badge/Debian-v12.1-blue)]()
 
-**Debian 12.1-slim** image.
+**Debian v12.1-slim** image.
 
 --------------
 
