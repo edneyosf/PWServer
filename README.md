@@ -4,9 +4,8 @@
 
 [![Version](https://img.shields.io/badge/Version-v1.8-success)]()
 [![Version](https://img.shields.io/badge/Java_JRE-6u45-blue)]()
-[![Version](https://img.shields.io/badge/Java_JDK-11-blue)]()
-[![Version](https://img.shields.io/badge/Debian-v11.5-blue)]()
-[![Version](https://img.shields.io/badge/Database-v1.0-blue)]()
+[![Version](https://img.shields.io/badge/Java_JDK-17-blue)]()
+[![Version](https://img.shields.io/badge/Debian-v12.1-blue)]()
 
 Docker
 
