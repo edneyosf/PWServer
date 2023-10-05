@@ -7,19 +7,58 @@
 [![Version](https://img.shields.io/badge/Java_JDK-17-blue)]()
 [![Version](https://img.shields.io/badge/Debian-v12.1-blue)]()
 
-## Comandos
+**Debian 12.1** image.
 
-Inicia os serviços
+--------------
+
+## Docker
+
+We have two containers with the following names: `core_pw` (pw:core) and `database_pw` (pw:database).
+
+- **core_pw** - holds core server data on `29000` port.
+- **database_pw** - holds database server on `3306` port.
+ 
+### Start/create containers
+
 ```
-startpw
+docker compose up -d
 ```
 
-Inicia os serviços (apenas o mapa principal)
+### Stop containers
+
 ```
-startpw-min
+docker compose stop
 ```
 
-Desliga os serviços
+## Database
+
+In `database_pw` container run the command to create the databases.
 ```
-stoppw
+mysql -u root -p < pw.sql
 ```
+> $ docker exec -it database_pw bash
+
+## Start servers
+
+In `core_pw` container.
+> $ docker exec -it core_pw bash
+
+## Complete
+
+```
+start
+```
+> To start all maps
+
+## Minimum
+
+```
+start-min
+```
+> To start only the main map
+
+## Stop
+```
+stop
+```
+> To stop running server
