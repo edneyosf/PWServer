@@ -1,0 +1,51 @@
+networks:
+  pw:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+services:
+  core:
+    container_name: core_pw
+    image: pw:core
+    volumes:
+      - ./bin:/home/pw/server
+      - ./lib/libpcre.so.0:/lib/libpcre.so.0
+      - ./lib/libstdc++.so.5:/lib/libstdc++.so.5
+      - ./lib/libstdc++.so.5.0.7:/lib/libstdc++.so.5.0.7
+      - ./lib/libtask.so:/lib/libtask.so
+      - ./lib/libtask.so.2:/lib/libtask.so.2
+      - ./lib/libxml2.so.2:/lib/libxml2.so.2
+    cpu_period: 50000
+    cpu_quota: 25000
+    build:
+      context: .
+      dockerfile: "core.Dockerfile"
+    networks:
+      pw:
+        ipv4_address: 172.20.0.3
+    ports:
+      - "29000:29000"
+      - "8080:8080"
+    depends_on:
+      - database
+    stdin_open: true
+    restart: always
+  database:
+    container_name: database_pw
+    image: pw:database
+    volumes:
+      - ./util/pw.sql:/pw.sql
+    cpu_period: 50000
+    cpu_quota: 25000
+    build:
+      context: .
+      dockerfile: "database.Dockerfile"
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      pw:
+        ipv4_address: 172.20.0.2
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 220820
+    restart: always
