@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PW_AUTHD=/home/pw/server/authd
+PW_AUTHD=$PW_PATH/authd
 
 cd $PW_AUTHD
 

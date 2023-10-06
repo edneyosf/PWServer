@@ -2,13 +2,12 @@ networks:
   pw:
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 172.21.0.0/24
 services:
   core:
     container_name: core_pw
     image: pw:core
     volumes:
-      - ./bin:/home/pw/server
       - ./lib/libpcre.so.0:/lib/libpcre.so.0
       - ./lib/libstdc++.so.5:/lib/libstdc++.so.5
       - ./lib/libstdc++.so.5.0.7:/lib/libstdc++.so.5.0.7
@@ -22,7 +21,7 @@ services:
       dockerfile: "core.Dockerfile"
     networks:
       pw:
-        ipv4_address: 172.20.0.3
+        ipv4_address: 172.21.0.3
     ports:
       - "29000:29000"
     depends_on:
@@ -42,7 +41,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     networks:
       pw:
-        ipv4_address: 172.20.0.2
+        ipv4_address: 172.21.0.2
     ports:
       - "3306:3306"
     environment:

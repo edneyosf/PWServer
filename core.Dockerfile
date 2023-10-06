@@ -1,6 +1,6 @@
 FROM debian:12.1-slim
 
-ENV CORE_VERSION=1.9
+ENV CORE_VERSION=2.0
 ENV PW_PATH=/home/pw/server
 
 RUN dpkg --add-architecture i386
@@ -12,6 +12,8 @@ RUN chmod +x jre-6u45-linux-x64.bin
 RUN ./jre-6u45-linux-x64.bin
 RUN rm jre-6u45-linux-x64.bin
 RUN update-alternatives --install "/usr/bin/java" "java" "/jre1.6.0_45/bin/java" 9999
+
+ADD bin /home/pw/server
 
 RUN echo '#!/bin/sh\n\n./home/pw/server/start' > /usr/local/bin/start
 RUN chmod +x /usr/local/bin/start
