@@ -26,6 +26,7 @@ services:
       - "29000:29000"
     depends_on:
       - database
+    stdin_open: true
     restart: always
   database:
     container_name: database_pw
