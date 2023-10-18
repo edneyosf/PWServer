@@ -14,6 +14,7 @@ RUN rm jre-6u45-linux-x64.bin
 RUN update-alternatives --install "/usr/bin/java" "java" "/jre1.6.0_45/bin/java" 9999
 
 ADD bin /home/pw/server
+RUN chmod -R 0775 /home/pw/server
 
 RUN echo '#!/bin/sh\n\n./home/pw/server/start' > /usr/local/bin/start
 RUN chmod +x /usr/local/bin/start
