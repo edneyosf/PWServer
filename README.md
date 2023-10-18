@@ -148,6 +148,6 @@ call usecash ($userId,1,0,1,0,$amount,1,@error)
 
 > /home/pw/server/gamedbd/dbhomewdb
 
-> /home/pw/server/uniquenamed
+> /home/pw/server/uniquenamed/unamed
 
 > mysqldump -u root -p pw > backup.sql
