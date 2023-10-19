@@ -43,7 +43,7 @@ services:
       pw:
         ipv4_address: 172.21.0.2
     ports:
-      - "3306:3306"
+      - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: 220820
     restart: always
