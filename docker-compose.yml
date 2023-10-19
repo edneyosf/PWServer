@@ -14,8 +14,6 @@ services:
       - ./lib/libtask.so:/lib/libtask.so
       - ./lib/libtask.so.2:/lib/libtask.so.2
       - ./lib/libxml2.so.2:/lib/libxml2.so.2
-    cpu_period: 50000
-    cpu_quota: 25000
     build:
       context: .
       dockerfile: "core.Dockerfile"
@@ -33,8 +31,6 @@ services:
     image: pw:database
     volumes:
       - ./util/pw.sql:/pw.sql
-    cpu_period: 50000
-    cpu_quota: 25000
     build:
       context: .
       dockerfile: "database.Dockerfile"
