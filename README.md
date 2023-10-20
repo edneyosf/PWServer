@@ -146,8 +146,23 @@ call usecash ($userId,1,0,1,0,$amount,1,@error)
 
 ## Backup
 
-> /home/pw/server/gamedbd/dbhomewdb
+```
+docker cp core_pw:/home/pw/server/gamedbd/dbhomewdb .
+```
+```
+docker cp core_pw:/home/pw/server/uniquenamed/unamed .
+```
+> To save backup of server files
 
-> /home/pw/server/uniquenamed/unamed
+In `database_pw` container, run the following command
 
-> mysqldump -u root -p pw > backup.sql
+```
+mysqldump -u root -p pw > backup.sql
+```
+
+Outside the `database_pw` container
+
+```
+docker cp database_pw:/backup.sql .
+```
+> To save the database backup
