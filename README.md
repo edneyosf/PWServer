@@ -146,6 +146,8 @@ call usecash ($userId,1,0,1,0,$amount,1,@error)
 
 ## Backup
 
+### Save
+
 ```
 docker cp core_pw:/home/pw/server/gamedbd/dbhomewdb .
 ```
@@ -166,3 +168,24 @@ Outside the `database_pw` container
 docker cp database_pw:/backup.sql .
 ```
 > To save the database backup
+
+### Restore
+
+```
+docker cp dbhomewdb core_pw:/home/pw/server/gamedbd/
+```
+```
+docker cp unamed core_pw:/home/pw/server/uniquenamed/
+```
+> Server files
+
+```
+docker cp backup.sql database_pw:/
+```
+
+In `database_pw` container, run the following command
+
+```
+mysql -u root -p pw < backup.sql
+```
+> Restore database
