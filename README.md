@@ -188,4 +188,4 @@ In `database_pw` container, run the following command
 ```
 mysql -u root -p pw < backup.sql
 ```
-> Restore database
+> Restore database backup
