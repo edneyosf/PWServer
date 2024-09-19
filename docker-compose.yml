@@ -38,7 +38,7 @@ services:
     networks:
       pw:
         ipv4_address: 172.21.0.2
-    ports:
+    expose:
       - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: 220820
