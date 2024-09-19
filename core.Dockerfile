@@ -1,6 +1,6 @@
 FROM debian:12.1-slim
 
-ENV CORE_VERSION=2.0
+ENV CORE_VERSION=2.1
 ENV PW_PATH=/home/pw/server
 
 RUN dpkg --add-architecture i386
