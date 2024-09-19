@@ -175,9 +175,6 @@ docker cp database_pw:/backup.sql .
 ```
 docker cp dbhomewdb core_pw:/home/pw/server/gamedbd/
 ```
-```
-docker cp unamed core_pw:/home/pw/server/uniquenamed/
-```
 > Server files
 
 ```
